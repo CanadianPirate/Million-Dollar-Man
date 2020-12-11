@@ -1,6 +1,10 @@
+""" Additon list
+Vars: starting cash, expected interest, years of return, quarters/montly increments, quarterly/montly addiditons
 
-def Calc_interest(principal, quarters, interest):
-    for i in range(quarters):
+"""
+
+def Calc_interest(principal, increments, interest):
+    for i in range(increments):
         principal *= ((interest / 100) + 1)
 
     return principal
