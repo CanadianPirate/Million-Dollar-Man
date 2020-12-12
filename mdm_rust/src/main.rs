@@ -5,7 +5,7 @@ fn calc_interest(mut principal: f64, increment: u32, mut interest: f64, addition
     let mut years: f64 = 0.0;
     interest /= 100.0;
     interest /= increment as f64;
-    price_growth /= 100.0;
+    price_growth = (price_growth /100.0) / increment as f64;
     div_growth /= 100.0;
     while principal < 1000000.0{
         for _ in 0..increment {
