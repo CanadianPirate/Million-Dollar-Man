@@ -44,5 +44,7 @@ fn main() {
 
     println!("It will take you {} year(s) to be a million dollar man.", calc_interest(assets, increment, interest, addition, price_growth, div_growth));
 
+    println!("When your finished, enter anything to exit.");
+    let _: String = read!();
 
 }
