@@ -1,9 +1,9 @@
 def Calc_interest(principal, increment, interest, addition, price_growth, div_growth):
     years = 0
     interest /= 100
-    interest /= increment
     price_growth /= 100
     div_growth /= 100
+    interest /= increment
     while (principal < 1000000):
         for i in range(increment):
             principal += principal * (price_growth / increment)
