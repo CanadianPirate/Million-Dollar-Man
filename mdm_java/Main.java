@@ -1,7 +1,6 @@
 package com.bsherwin;
 import java.util.Scanner;
 
-
 public class Main {
     private static int assetsN; // Currently held cash/assest
     private static float interestA; //expected interest annually on current held assets
@@ -11,6 +10,7 @@ public class Main {
     private static float dividendG;
     private static int result;
     private static byte invqm;
+    private static String question;
 
     public static void Calculator(int assetsN, byte invqm, float interestA, float inflationA, float dividendG, short contributeQM) {
 
@@ -30,7 +30,6 @@ public class Main {
         }
     }
 
-
     public static void main(String[] args) {
         Scanner AssetsN = new Scanner(System.in);
         Scanner InterestA = new Scanner(System.in);
@@ -48,14 +47,17 @@ public class Main {
         returnsQM = ReturnsMQ.nextLine();
         if ((returnsQM.equals("m")) || (returnsQM.equals("Monthly")) || (returnsQM.equals("M")) || (returnsQM.equals("monthly"))) {
             invqm = 12;
+            question = "Monthly";
+
         } else if ((returnsQM.equals("q")) || (returnsQM.equals("Q")) || (returnsQM.equals("quarterly")) || (returnsQM.equals("Quarterly"))) {
             invqm = 4;
+            question = "Quarterly";
 
         } else {
             System.out.println("Investment returns are Quarterly or Monthly?");
             returnsQM = ReturnsMQ.nextLine();
         }
-        System.out.println(returnsQM + " contributions made yourself?");
+        System.out.println(question + " contributions made yourself?");
         contributeQM = ContributeQM.nextShort();
         System.out.println("Expected inflation in stocks yearly? (% as a whole number)");
         inflationA = InflationA.nextByte();
