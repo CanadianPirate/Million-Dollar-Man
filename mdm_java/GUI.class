@@ -1,0 +1,66 @@
+package com.bsherwin;
+
+import javax.swing.*;
+import java.util.Scanner;
+
+public class GUI extends JFrame{
+
+    private static int assetsN; // Currently held cash/assest
+    private static float interestA; //expected interest annually on current held assets
+    private static String returnsQM; //Investments returned Q or M
+    private static short contributeQM; // Contributions each Q or M
+    private static float inflationA;
+    private static float dividendG;
+    private static int result;
+    private static byte invqm;
+    private static String question;
+    //Below are for GUI
+    private static JFrame frame;
+    private static JPanel panel;
+    private static JLabel assetsNow;
+    private static JLabel interestAnnual;
+    private static JLabel qmReturns;
+    private static JLabel contributions;
+    private static JLabel inflation;
+    private static JLabel dividend;
+
+    GUI(){
+        frame = new JFrame("Million Dollar Man!");
+        panel = new JPanel();
+        ImageIcon image = new ImageIcon("icon.png");
+        this.setIconImage(image.getImage());
+        this.setTitle("Stock Email Manager");
+        this.setSize(350,200);
+        this.setResizable(false); //Prevents the this from being resized
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        panel.setLayout(null);
+        this.add(panel);
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        assetsNow = new JLabel("How much do you currently hold in cash/assets?");
+        assetsNow.setBounds(1,1,300,25);
+        panel.add(assetsNow);
+        interestAnnual = new JLabel("Expected annual percentage on currently held assets? (Whole number)");
+        interestAnnual.setBounds(1,25,300,25);
+        panel.add(interestAnnual);
+        qmReturns = new JLabel("Investment returns are Quarterly or Monthly?");
+        qmReturns.setBounds(1,50,300,25);
+        panel.add(qmReturns);
+        contributions = new JLabel("contributions made yourself?");
+        contributions.setBounds(1,75,300,25);
+        panel.add(contributions);
+        inflation = new JLabel("Expected inflation in stocks yearly? (% as a whole number)");
+        inflation.setBounds(1,100,300,25);
+        panel.add(inflation);
+        dividend = new JLabel("Expected dividend rate growth per year?");
+        dividend.setBounds(1,125,300,25);
+        panel.add(dividend);
+
+
+
+
+
+
+    }
+
+}
