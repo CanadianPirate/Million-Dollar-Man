@@ -1,13 +1,8 @@
 package com.bsherwin;
+
 import java.util.Scanner;
 
 public class Main {
-    private static int assetsN; // Currently held cash/assest
-    private static float interestA; //expected interest annually on current held assets
-    private static String returnsQM; //Investments returned Q or M
-    private static short contributeQM; // Contributions each Q or M
-    private static float inflationA;
-    private static float dividendG;
     private static int result;
     private static byte invqm;
     private static String question;
@@ -38,42 +33,34 @@ public class Main {
         Scanner InflationA = new Scanner(System.in);
         Scanner DividendG = new Scanner(System.in);
 
-
         System.out.println("How much do you currently hold in cash/assets?");
-        assetsN = AssetsN.nextInt();
+        // Currently held cash/assest
+        int assetsN = AssetsN.nextInt();
         System.out.println("Expected annual percentage on currently held assets? (Whole number)");
-        interestA = InterestA.nextShort();
+        //expected interest annually on current held assets
+        float interestA = InterestA.nextShort();
         System.out.println("Investment returns are Quarterly or Monthly?");
-        returnsQM = ReturnsMQ.nextLine();
+        //Investments returned Q or M
+        String returnsQM = ReturnsMQ.nextLine();
         if ((returnsQM.equals("m")) || (returnsQM.equals("Monthly")) || (returnsQM.equals("M")) || (returnsQM.equals("monthly"))) {
             invqm = 12;
             question = "Monthly";
-
         } else if ((returnsQM.equals("q")) || (returnsQM.equals("Q")) || (returnsQM.equals("quarterly")) || (returnsQM.equals("Quarterly"))) {
             invqm = 4;
             question = "Quarterly";
-
         } else {
             System.out.println("Investment returns are Quarterly or Monthly?");
-            returnsQM = ReturnsMQ.nextLine();
         }
         System.out.println(question + " contributions made yourself?");
-        contributeQM = ContributeQM.nextShort();
+        // Contributions each Q or M
+        short contributeQM = ContributeQM.nextShort();
         System.out.println("Expected inflation in stocks yearly? (% as a whole number)");
-        inflationA = InflationA.nextByte();
+        float inflationA = InflationA.nextByte();
         System.out.println("Expected dividend rate growth per year?");
-        dividendG = DividendG.nextByte();
-
+        float dividendG = DividendG.nextByte();
         Calculator(assetsN, invqm, interestA, inflationA, dividendG, contributeQM);
-
-
         System.out.println("It will take you " + result + " year(s) to be a million dollar man!");
-
-
-
     }
-
-
 }
 
 
